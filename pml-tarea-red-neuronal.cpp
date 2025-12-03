@@ -1,12 +1,11 @@
-/*Curso: Programación para Machine Learning
- *Fecha: 03/12/25
- *Tarea: Implementacion de Nodos de una Red Neuronal
- *Grupo: 7
- *Integrantes:
- *Llancachagua Córdova Felipe César
- *Jorge Augusto Vidal Chávez
- *Frank Chipana Briceño
- */
+//Curso: Programacion para Machine Learning
+//Fecha: 03/12/25
+//Tarea: Implementacion de Nodos de una Red Neuronal
+//Grupo: 7
+//Integrantes:
+//Llancachagua Cordova Felipe Cesar
+//Jorge Augusto Vidal Chavez
+//Frank Chipana Briceno
 #include <iostream>
 using namespace std;
 
