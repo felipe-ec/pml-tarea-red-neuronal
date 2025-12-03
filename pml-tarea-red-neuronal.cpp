@@ -18,27 +18,28 @@ struct NeuralNetwork {
 };
 
 void createNeuralNetwork(NeuralNetwork &net, int e, int m, int n, int s) {
+    //Crea estructura de la red neuronal
     net.numLayers = 1 + n + 1;
     net.layers = new Layer[net.numLayers];
     //CreaCapaEntrada
-
-    //CreaCapasOcultas
     //input layer
     net.layers[0].count = e;
     net.layers[0].nodes = new Node[e];
 
-    //CreaCapaSalida
+
+    //CreaCapasOcultas
     //hidden layer
     for (int i = 1; i <= n; ++i) {
         net.layers[i].count = m;
         net.layers[i].nodes = new Node[m];
     }
 
+    //CreaCapaSalida
     int outputIndex = n + 1;
     net.layers[outputIndex].count = s;
     net.layers[outputIndex].nodes = new Node[s];
 
-    //CreaNodo - inicializa
+    //CreaNodo - inicializa nodos
     for (int layerIndex = 0; layerIndex < net.numLayers; ++layerIndex) {
         Layer &layer = net.layers[layerIndex];
         for (int j = 0; j < layer.count; ++j) {
@@ -154,16 +155,16 @@ int main() {
 
     NeuralNetwork net;
 
-    //CreaCapaEntrada
-    //CreaCapasOcultas
-    //CreaCapaSalida
+    //Aqui se realiza CreaCapaEntrada , CreaCapasOcultas, CreaCapaSalida
     createNeuralNetwork(net, e, m, n, s);
 
-    //CreaNodo - enlaza
+    //CreaNodo - enlaza nodos
     connectLayers(net);
 
+    //Imprimiendo red
     printNetworkDiagram(net);
 
+    //Liberando recursos
     freeNetwork(net);
     return 0;
 
