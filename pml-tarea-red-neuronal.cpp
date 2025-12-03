@@ -1,3 +1,12 @@
+/*Curso: Programación para Machine Learning
+ *Fecha: 03/12/25
+ *Tarea: Implementacion de Nodos de una Red Neuronal
+ *Grupo: 7
+ *Integrantes:
+ *Llancachagua Córdova Felipe César
+ *Jorge Augusto Vidal Chávez
+ *Frank Chipana Briceño
+ */
 #include <iostream>
 using namespace std;
 
@@ -145,6 +154,7 @@ void printNetworkDiagram(const NeuralNetwork &net) {
     }
 }
 
+//Recorrido
 void printLayers(const NeuralNetwork net) {
     for (int layerIndex = 0; layerIndex < net.numLayers; ++layerIndex) {
         const Layer &layer = net.layers[layerIndex];
@@ -178,7 +188,7 @@ int main() {
 
     NeuralNetwork net;
 
-    //Aqui se realiza CreaCapaEntrada , CreaCapasOcultas, CreaCapaSalida
+    //Aqui se instancia la red neuronal, crea la capa de entrada , crea las capaz ocultas, crea las capa de salida
     createNeuralNetwork(net, e, m, n, s);
 
     //CreaNodo - enlaza nodos
