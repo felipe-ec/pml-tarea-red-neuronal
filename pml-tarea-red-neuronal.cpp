@@ -145,6 +145,29 @@ void printNetworkDiagram(const NeuralNetwork &net) {
     }
 }
 
+void printLayers(const NeuralNetwork net) {
+    for (int layerIndex = 0; layerIndex < net.numLayers; ++layerIndex) {
+        const Layer &layer = net.layers[layerIndex];
+
+        if (layerIndex == 0) {
+            cout << "Entrada: ";
+        } else if (layerIndex == net.numLayers - 1) {
+            cout << "Salida: ";
+        } else {
+            int hiddenIndex = layerIndex; // 1..n
+            cout << "CapaOculta" << hiddenIndex << ": ";
+        }
+
+        for (int j = 0; j < layer.count; ++j) {
+            cout << layer.nodes[j].code;
+            if (j < layer.count - 1) {
+                cout << " ";
+            }
+        }
+        cout << '\n';
+    }
+}
+
 
 int main() {
     int e, m, n, s;
@@ -161,7 +184,10 @@ int main() {
     //CreaNodo - enlaza nodos
     connectLayers(net);
 
-    //Imprimiendo red
+    //Imprimiendo segun enunciado del problema
+    printLayers(net);
+
+    //Imprimiendo red neuronal con enlaces
     printNetworkDiagram(net);
 
     //Liberando recursos
